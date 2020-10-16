@@ -30,3 +30,9 @@ class Incident(models.Model):
     lng = models.FloatField('lng', blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering: ["-created_at"]
+
+    def __str__(self):
+        return f"{self.user}'s {self.description}.'"

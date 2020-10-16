@@ -1,0 +1,126 @@
+.content .search{
+    align-content: center;
+    display: flex;
+    margin-top: 50px;
+    text-align: center;
+    width: 500px;
+    height: 50px;
+    border: 2px solid #cccccc;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.searchContent{
+  width: 500px;
+  border: none;
+  justify-content: center;
+}
+
+.searchButton{
+  margin: 12px;
+  margin-top: 15px;
+}
+
+.incidencePicture{
+    height: 70px;
+    width: 70px;
+    border-radius: 360px;
+    border: 1px solid #cecece;
+}
+
+.view{
+    background-color: #F27F3D;
+    height: 30px;
+    color: #ffffff;
+    width: 100px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.print{
+    background-color: #03588C;
+    height: 30px;
+    color: #ffffff;
+    width: 100px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    border-bottom: 1px solid #cecece;
+    width: 200px;
+    padding: 8px;
+}
+
+tr{
+    margin: 20px;
+    border-bottom: 1px solid black;
+}
+
+table{
+    display: grid;
+    align-content: center;
+}
+
+.th2{
+    height: 100px;
+}
+
+@media only screen and (max-width:800px){
+    table{
+        width: 400px;
+        font-size: smaller;
+    }
+
+    tr{
+        height: 80px;
+    }
+
+    .incidenceTables{
+        width: 400px;
+    }
+
+    th, td{
+        width: 100px;
+        padding: 5px;
+    }
+
+    .view{
+        background-color: #F27F3D;
+        height: 30px;
+        color: #ffffff;
+        width: 50px;
+        text-decoration: none;
+        border: none;
+        font-size: x-small;
+    }
+    
+    .print{
+        background-color: #03588C;
+        height: 30px;
+        color: #ffffff;
+        width: 50px;
+        text-decoration: none;
+        border: none;
+        font-size: x-small;
+    }
+
+    .incidencePicture{
+        height: 30px;
+        width: 30px;
+        border-radius: 360px;
+        border: 1px solid #cecece;
+    }
+
+    .mainContent{
+        padding-bottom: 80px;
+    }
+
+}
+

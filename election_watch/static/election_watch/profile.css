@@ -1,0 +1,216 @@
+.sidebar{
+    /* background-color: #c4c4c4; */
+    background-color:  rgba(196, 196, 196, 0.33);;
+    z-index: -1;
+}
+
+.container{
+    background-color: #09273F;
+}
+
+.userImage1{
+    height: 100px;
+    width: 100px;
+    border-radius: 360px;
+    justify-self: center;
+    margin-top: 120px;
+}
+
+.userImage2{
+    height: 150px;
+    width: 150px;
+    border-radius: 360px;
+    justify-self: center;
+    align-self: center;
+}
+
+.sidebar2{
+    margin: 0;
+    padding: 0%;
+    width: 250px;
+    position: fixed;
+    height: 40%;
+    overflow: hidden;
+    font-size: 16px;
+    top: 90px;
+    display: grid;
+    justify-content: center;
+}
+
+.sideText{
+    color: #000000;
+}
+
+h3{
+    color: #09273F;
+    text-justify: distribute-all-lines;
+}
+
+.profileHolder{
+    width: 1120px;
+    height: 265px;
+    background: rgba(228, 227, 227, 0.575);
+    border-radius: 20px;
+    margin-left: 150px;
+    display: flex;
+}
+
+.profileTl{
+    display: grid;
+    margin-left: 100px;
+} 
+
+.profileTr{
+    display: grid;
+    margin-left: 150px;
+    height: 80px;
+    margin-top: 80px;
+}
+
+.sidebar{
+    color: #000000;
+    display: grid;
+}
+
+.sidebar a{
+    color: #000000;
+}
+
+.mainContent{
+    display: grid;
+    margin-top: 0px;
+    margin-left: 150px;
+}
+
+button{
+    cursor: pointer;
+    background-color: #09273F;
+    color: #ffffff;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+
+.activeButt{
+    color: #09273F;
+    background-color: #ffffff;
+    border: 1px solid #09273F
+}
+
+table{
+    border-collapse: collapse;
+    background-color: #f3f3f3;
+    width: 1120px;
+}
+
+th, td{
+    border-bottom: 1px solid #cecece;
+    width: 200px;
+    padding: 8px;
+}
+
+tr{
+    margin: 20px;
+}
+
+.selections{
+    justify-self: right;
+    margin-bottom: 20px;
+}
+
+.btnCall{
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width:1500px){
+    .sidebar2{
+      width: 180px;
+      text-align: center;
+    }
+
+    .profileHolder{
+        width: 800px;
+        height: 265px;
+        background: rgba(228, 227, 227, 0.575);
+        border-radius: 20px;
+        margin-left: 150px;
+        display: flex;
+    }
+
+    .profileTl{
+        display: grid;
+        margin-left: 10px;
+    } 
+    
+    .profileTr{
+        display: grid;
+        margin-left: 15px;
+        height: 80px;
+        margin-top: 80px;
+    }
+
+    table{
+        border-collapse: collapse;
+        background-color: #f3f3f3;
+        width: 800px;
+    }
+
+    th, td{
+        border-bottom: 1px solid #cecece;
+        width: 100px;
+        padding: 8px;
+    }
+    
+}
+
+@media only screen and (max-width:1100px){
+    table{
+        width: 300px;
+        font-size: smaller;
+        background-color: #ffffff;
+    }
+
+    tr{
+        height: 80px;
+    }
+    th, td{
+        width: 100px;
+        padding: 5px;
+    }
+
+    .mainContent{
+        padding-bottom: 80px;
+        margin-left: 15px;
+        width: 379px;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .profileHolder{
+        width: 100%;
+        margin-left: 0px;
+        background-color: #ffffff;
+    }
+
+    .profileTl{
+        font-size: 10px;
+        color: #000000;
+    } 
+    
+    .profileTr{
+        font-size: 10px;
+        margin-left: 0px;
+        margin-right: 5px;
+    }
+
+    button{
+        width: 100px;
+        margin-left: 10px;
+        font-size: 10px;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,71 @@
+.form{
+    display: grid;
+    align-content: center;
+    width: 500px;
+    text-align: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    box-shadow: 1px 1px 1px 2px #d8d8d8;
+}
+
+.form .tInput{
+    margin: 20px;
+    /* margin-bottom: 20px; */
+    height: 50px;
+    border-radius: 20px;
+    width: 300px;
+    display: flex;
+    text-align: center;
+}
+
+.form h1{
+    margin-bottom: 40px;
+}
+
+.form .signUpButton{
+    width: 150px;
+    height: 50px;
+    margin:20px;
+    border-radius: 20px;
+    margin-left: 90px;
+}
+
+.form .signUpButton:hover{
+    color: #ffffff;
+    background-color: #03588C;
+    cursor: pointer;
+}
+
+.form a{
+    color: #F27F3D;
+    /* text-decoration: none; */
+    margin-top: 40px;
+}
+
+.mainContent2{
+    /* margin-left: 200px; */
+    margin-top: 50px;
+    padding: 1px 16px;
+    display: flex;
+    height: 600px;
+    z-index: 10;
+    align-content: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    background-color: #03588C;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    /* height: 60px; */
+  }
+  

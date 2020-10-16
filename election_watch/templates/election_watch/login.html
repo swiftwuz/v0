@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static "election_watch/home.css" %}">
+    <link rel="stylesheet" href="{% static "election_watch/log.css" %}">
+    <script src="js/home.js"></script>
+    <script src="https://kit.fontawesome.com/2cf9464d02.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="dashboard.html"> <img src="{% static "election_watch/images/logo.png" %}" alt="logo"></a>
+        </div>
+  
+        <div  class="ewmid">
+            <h1>Election Watch Back Office</h1>
+        </div>
+  
+        <div class="navbar">
+            <div class="icon-bar" onclick="Show()">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+  
+            <ul id="nav-list">
+                <li class="close"><span onclick="Hide()">X</span></li>
+                <li><a href="#"> Username</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mainContent2">
+        {% block content %}
+        <form action="#" method="POST" class="form">
+            {% csrf_token %}
+            <h1> Log In </h1>
+            <br>
+            <input type="text" name="email" id="email" placeholder=" Please Enter Your Email Address" class="tInput">
+            <br>
+            <input type="password" name="password" id="password" placeholder=" Please enter your Password" class="tInput">
+            <br>
+            <button type="submit" class="signUpButton"> Log In </button>
+            <a href="{% url "register" %}">Don't have an account? Sign Up</a>
+        </form>
+        {% endblock content %}
+    </div>
+
+</body>
+</html>

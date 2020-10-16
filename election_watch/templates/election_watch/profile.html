@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static "election_watch/home.css" %}">
+    <link rel="stylesheet" href="{% static "election_watch/profile.css" %}">
+    <script src="../js/home.js"></script>
+    <script src="https://kit.fontawesome.com/2cf9464d02.js" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{% static "election_watch/omega.css" %}">
+    <script src="../assets/js/omega.js"></script>
+
+</head>
+<body> 
+
+  <div class="container">
+    <div class="logo">
+        <a href="#"> <img src="{% static "election_watch/images/logo.png" %}" alt="logo"></a>
+    </div>
+
+    <div  class="ewmid">
+        <h1>Election Watch Back Office</h1>
+    </div>
+
+    <div class="navbar">
+        <ul id="nav-list">
+            <li class="close"><span onclick="Hide()">X</span></li>
+            <li><img class="userPicture" src="{{ user.profile.image.url }}" alt="" /></li>
+            <li><a href="#">{{user.username}}</a></li>
+        </ul>            
+    </div>
+  </div>
+
+    <div class="sidebar">
+
+        <div class="sidebar2">
+            <div class="sideText">
+                <h3>Account Administration</h3>
+            </div>
+        </div>        
+
+        <div id="links">
+            <div class="sidebarBottom">
+            <button id="call" class="btnCall">
+                <a href="dashboard.html" class="call">
+                    <i class="fas fa-backward"></i> Back to Dashboard
+                </a>
+            </button>
+            <a href="../../index.html"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="profileHolder">
+            <img class="userImage2" src="{{user.profile.image.url}}" alt="" />
+            <div class="profileTl">
+                <h1> Jason Vorhees </h1>
+                <h3> Date Registered: 09/09/2020</h3>
+                <h3> Date of Birth: 13/06/1946</h3>
+                <h3> Telephone Number: +1 855-651-2267</h3>
+            </div>
+            <div class="profileTr">
+                <h3> Status: Active</h3>
+                <h3> Last Login: 20/09/2020</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainContent">
+        <div class="selections">
+            <button class="activeButt">User Information</button>
+            <button>Financials</button>
+            <button>Activities</button>
+        </div>
+        <br>
+        <table>
+            <tr>
+                <td><h3>Basic Information</h3></td> <td></td>
+            </tr>
+
+            <tr>
+                <td>Customer Name: </td> <td>{{user.username}}</td>
+            </tr>
+            <tr>
+                <td>Country: </td> <td>USA</td>
+            </tr>
+            <tr>
+                <td>Email:</td> <td>{{user.email}}</td>
+            </tr>
+            <tr>
+                <td>Account Expiration Date: </td> <td>09/09/2030</td>
+            </tr>                
+        </table>
+    </div>
+
+</body>
+</html>
+{% endblock content %}

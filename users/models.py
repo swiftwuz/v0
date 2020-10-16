@@ -24,9 +24,6 @@ class UserManager(BaseUserManager):
         if email is None:
             raise TypeError("Must provide email.")
 
-        if phone_number is None:
-            raise TypeError("Must provide phone_number.")
-
         user = self.model(
             phone_number=phone_number,
             username=username,
@@ -36,14 +33,15 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_superuser(self, username, email, phone_number, password=None):
+    def create_superuser(self, username, email,
+                         phone_number=None, password=None):
+
         if password is None:
             raise TypeError("Password cannot be empty.")
         if email is None:
             raise TypeError("Must provide email")
-        if phone_number is None:
-            raise TypeError("Phone number cannot be empty.")
 
+        phone_number = input("Phone Number: ")
         user = self.create_user(username, email, phone_number, password)
         user.is_superuser = True
         user.is_staff = True
@@ -51,9 +49,13 @@ class UserManager(BaseUserManager):
         return user
 
 
+#  set all blank and null to False
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=100, unique=True, db_index=True)
     email = models.EmailField(max_length=100, unique=True, db_index=True)
+
+    otp_confirmed = models.BooleanField(default=False)
+    is_verified = models.BooleanField(default=False)
 
     phone_regex = RegexValidator(
         regex=r'^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$',
@@ -62,11 +64,21 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField(validators=[phone_regex], max_length=15,
                                     blank=True, unique=True)
 
-    is_staff = models.BooleanField(default=False)
+    first_name = models.CharField(max_length=100, null=True)
+    last_name = models.CharField(max_length=100, null=True)
+
+    affliation = models.CharField(max_length=100, null=True)
+    affliation_code = models.IntegerField(blank=True, null=True)
+
+    address = models.CharField(max_length=20, null=True)
+    country = models.CharField(max_length=20, null=True)
     is_pollingagent = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
+
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
 
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
@@ -74,7 +86,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     def __str__(self):
-        return f"{self.email_subject}"
+        return f"{self.email}"
 
     def token(self):
         refresh = RefreshToken.for_user(self)
@@ -84,45 +96,17 @@ class User(AbstractBaseUser, PermissionsMixin):
         }
 
 
-class PollingAgentManager(BaseUserManager):
-
-    def create_user(self, username, email, phone_number, password=None):
-        if username is None:
-            raise TypeError("Must provide username.")
-
-        if email is None:
-            raise TypeError("Must provide email.")
-
-        if phone_number is None:
-            raise TypeError("Must provide phone_number.")
-
-        user = self.model(
-            username=username,
-            phone_number=phone_number,
-            email=self.normalize_email(email),
-        )
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
-
-
 class PollingAgent(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    password = models.CharField(max_length=128, verbose_name="password", null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,
+                                primary_key=True)
 
-    otp_confirmed = models.BooleanField(default=False)
-    is_verified = models.BooleanField(default=False)
-    is_user = models.BooleanField(default=True)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    affliation = models.CharField(max_length=100)
-    affliation_code = models.IntegerField(blank=True, null=True)
-    is_active = models.BooleanField(default=True)
-    address = models.CharField(max_length=20)
-    country = models.CharField(max_length=20)
+    email = models.EmailField(max_length=100, unique=True, db_index=True,
+                              null=True)
 
-    objects = PollingAgentManager()
+    username = models.CharField(max_length=100, unique=True, db_index=True,
+                                null=True)
+
+    objects = UserManager()
 
     def __str_(self):
-        return f"{self.first_name} + {self.last_name} \
-    is affliated to {self.affliation}."
+        return f"{self.user}"

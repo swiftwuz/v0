@@ -1,32 +1,8 @@
 from django import forms
-# from django.contrib.auth.forms import UserCreationForm
+from django.forms import ValidationError
+from users.models import User
 
-from .models import Admin, Profile, Institution
-
-
-class InstRegistrationForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
-    password2 = forms.CharField(
-        label='Confirm Password', widget=forms.PasswordInput
-    )
-
-    class Meta:
-        model = Institution
-        fields = ['email', 'password', 'password2']
-
-        def clean_mail(self):
-            email = self.cleaned_data.get('email')
-            queryset = Institution.objects.filter(email='email')
-            if queryset.exist():
-                raise forms.ValidationError("Email already taken.")
-            return email
-
-        def clean_password(self):
-            password = self.cleaned_data.get('password')
-            password2 = self.cleaned_data.get('password2')
-            if password and password2 and password != password2:
-                raise forms.ValidationError("Passwords do not match.")
-            return password2
+from .models import Profile
 
 
 class AdminRegistrationForm(forms.ModelForm):
@@ -36,35 +12,48 @@ class AdminRegistrationForm(forms.ModelForm):
     )
 
     class Meta:
-        model = Admin
+        model = User
         fields = ['username', 'email', 'password', 'password2']
 
-        def clean_mail(self):
-            email = self.cleaned_data.get('email')
-            queryset = Admin.objects.filter(email='email')
-            if queryset.exist():
-                raise forms.ValidationError("Email already taken.")
-            return email
-
         def clean_password(self):
-            password = self.cleaned_data.get('password')
-            password2 = self.cleaned_data.get('password2')
-            if password and password2 and password != password2:
-                raise forms.ValidationError("Passwords do not match.")
-            return password2
+            password = self.cleaned_data["password"]
+            confirm_password = self.cleaned_data["password2"]
+            if password != confirm_password:
+                raise forms.ValidationError("Password mismatch!")
+            return confirm_password
 
-        def save(self, commit=True):
-            admin = super().save(commit=False)
-            admin.set_password(self.cleaned_data.get['password'])
-            if commit:
-                admin.save()
+
+class AdminLoginForm(forms.ModelForm):
+    email = forms.EmailField(max_length=150)
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ["email", "password"]
+
+    def check_email(self):
+        email = self.cleaned_data["email"]
+        user = User.objects.filter(email__iexact=email).first()
+        if not user:
+            raise ValidationError("You entered an incorrect password")
+
+        if not user.is_active:
+            raise ValidationError("This user is not active.")
+        return email
+
+    def check_password(self):
+        password = self.cleaned_data.get["password"]
+        User.objects.filter(password__iexact=password).exists()
+        if not password:
+            raise ValidationError("Entered incorrect password.")
+        return password
 
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
 
     class Meta:
-        model = Admin
+        model = User
         fields = ('email', 'username')
 
 

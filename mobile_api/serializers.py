@@ -6,5 +6,5 @@ class IncidentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Incident
-        fields = ["image", "category", "description", "created_at",
+        fields = ["id", "image", "category", "description", "created_at",
                   "video", "audio", "lat", "lng"]

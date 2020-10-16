@@ -1,52 +1,28 @@
 from django.db import models
 from PIL import Image
-from django.contrib.auth.models import (
-    BaseUserManager
-)
-from users.models import User
-
-
-class AdminManager(BaseUserManager):
-
-    def create_user(self, username, email, password=None):
-        if username is None:
-            raise TypeError("Must provide username.")
-
-        if email is None:
-            raise TypeError("Must provide email.")
-
-        user = self.model(
-            username=username,
-            email=self.normalize_email(email),
-        )
-        user.set_password(password)
-        user.save()
-        return user
+from users.models import User, UserManager
 
 
 class Admin(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE,
-                                parent_link=True, default=True,
-                                primary_key=True)
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     username = models.CharField(max_length=100, unique=True, null=True)
     email = models.EmailField(max_length=100, unique=True, null=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'email']
 
-    objects = AdminManager()
+    objects = UserManager()
 
     def __str__(self):
         return f"{self.email}"
 
 
 class Profile(models.Model):
-    admin = models.OneToOneField(Admin, on_delete=models.CASCADE)
+    admin = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f'{self.admin.username} Profile'
 
     def save_image(self):
         super().save()
@@ -83,8 +59,5 @@ class Institution(models.Model):
     address_line = models.CharField(max_length=400, blank=True, null=True)
     street = models.CharField(max_length=400, blank=True, null=True)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
-
     def __str__(self):
-        return f"{self.email}"
+        return f"{self.name}"

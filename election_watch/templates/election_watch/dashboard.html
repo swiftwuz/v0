@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static "election_watch/home.css" %}">
+    <script src="../js/home.js"></script>
+    <script src="https://kit.fontawesome.com/2cf9464d02.js" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="../assets/css/omega.css">
+    <script src="../assets/js/omega.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">
+        <a href="#"> <img src="{% static "election_watch/images/logo.png" %}" alt="logo"></a>
+    </div>
+
+    <div  class="ewmid">
+        <h1>Election Watch Back Office</h1>
+    </div>
+
+    <div class="navbar">
+        <ul id="nav-list">
+            <li class="close"><span onclick="Hide()">X</span></li>
+            <li><img class="userPicture" src="{% static "election_watch/images/user.png" %}" alt="" /></li>
+            <li><a href="#"> Username</a></li>
+        </ul>
+    </div>
+  </div>
+
+    <div class="sidebar">
+      <div id="links">
+        <br/>
+        <div class="dropdown">
+
+          <a href="registration/registration.html" class="">
+            <i class="fas fa-cash-register"></i> 
+            Registration
+            <i class="fas fa-caret-down" class="dArrow"></i>
+          </a>
+
+          <div class="dropdownContent">
+
+            <a href="registration/agents.html">
+              <i class="fas fa-user-secret"></i> Agents</a>
+
+            <a href="registration/institution.html" class="">
+              <i class="fas fa-university"></i> Institution
+            </a>
+
+            <a href="registration/location.html" class="">
+              <i class="fas fa-compass"></i> Location
+            </a>
+
+          </div>
+        </div>
+        <a href="dashboard.html" class="active">
+          <i class="fas fa-columns"></i> Dashboard
+        </a>
+        <a href="incidents.html" class="">
+          <i class="fas fa-exclamation-circle"></i> Incidents
+        </a>
+        <a href="feedback.html"><i class="fas fa-comments"></i> Feedback </a>
+        <a href="reports.html" class="">
+          <i class="fas fa-chart-pie"></i> Reports/Stats
+        </a>
+  
+        <a href="results.html"><i class="fas fa-poll"></i> Results </a>
+  
+        <div class="sidebarBottom">
+          <button id="call" class="btnCall">
+            <a href="#" class="call">
+              <i class="fas fa-phone-volume"></i> Make a Call
+            </a>
+          </button>
+          <a href="../../index.html"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+        <div class="search">
+            <div class="searchButton"><i class="fas fa-search"></i></div>
+            <input type="text" name="Search" id="Search" placeholder="Search by Subject, Constituency, Polling Statiion, Sender, ETC" class="searchContent">
+        </div>
+    </div>
+
+    <div class="mainContent">
+        <div class="map">
+            <img src="{% static "election_watch/ghana_Map.jpeg" %}" alt="">
+        </div>
+
+        <div class="incidLoc">
+            <table>
+                <tr>
+                    <th>Incidence</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <th><i class="fas fa-check-square"></i></th>
+                    <th>Ashanti</th>
+                </tr>
+                <tr>
+                    <th><i class="fas fa-check-square"></i></th>
+                    <th>Eastern</th>
+                </tr>
+                <tr>
+                    <th><i class="fas fa-check-square"></i></th>
+                    <th>Western</th>
+                </tr>
+                <tr>
+                    <th><i class="fas fa-exclamation-triangle"></i></th>
+                    <th>Greater Accra</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="results">
+            <div class="radios">
+                <input type="radio" name="status" id="National"> National
+                <input type="radio" name="status" id="Region"> Region
+                <input type="radio" name="status" id="Constituency"> Constituency
+            </div>
+
+            <input type="text" name="searchBar" id="searchBar" placeholder=" Search" class="searchBar">
+
+            <div class="resultsTable">
+                <div id="result"></div>
+            </div>
+            <div class="key">
+                <i class="fas fa-check-square"></i>  : No Report Cases 
+                <i class="fas fa-exclamation-triangle"></i>  : Reported Cases
+                <i class="fas fa-fire"></i>  : Trouble  
+            </div>
+        </div>
+    </div>
+
+<script>
+  // var navList = document.getElementById("nav-lists");
+  // function Show() {
+  // navList.classList.add("_Menus-show");
+  // }
+
+  // function Hide(){
+  // navList.classList.remove("_Menus-show");
+  // }
+
+  // let result = document.querySelector('#result');
+  // document.body.addEventListener('change', function (e) {
+  //     let target = e.target;
+  //     let message;
+  //     switch (target.id) {
+  //         case 'National':
+  //             message = 'National';
+  //             break;
+
+  //         case 'Region':
+  //             message = 'Region';
+  //             break;
+          
+  //         case 'Constituency':
+  //             message = 'Constituency';
+  //             break;
+      
+  //     }
+  //     result.textContent = message;
+  // })
+
+  function Show() {
+    var x = document.getElementById("links");
+    if (x.style.display === "block") {
+      x.style.display = "none"
+    } else {
+      x.style.display = "block"
+    }
+  }
+
+
+
+
+</script>
+
+</body>
+</html>
