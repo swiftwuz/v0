@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <div class="logo">
-          <a href="#"> <img src="{static "election_watch/images/logo.png"}" alt="logo"></a>
+          <a href="{% url "register" %}"></a> <img src="{% static "election_watch/images/logo.png" %}" alt="logo"></a>
       </div>
 
       <div  class="ewmid">
@@ -33,8 +33,6 @@
 
           <ul id="nav-list">
               <li class="close"><span onclick="Hide()">X</span></li>
-              <li><img class="userPicture" src="{% static "election_watch/images/user.png" %}" alt="" /></li>
-              <li><a href="#"> Username</a></li>
           </ul>
       </div>
   </div>
@@ -50,28 +48,27 @@
           <a href="agents.html"><i class="fas fa-user-secret"></i> Agents</a>
           <a href="location.html"><i class="fas fa-compass"></i> Location</a>
         </div>
-        
         <a href="institution.html" class="active"
           ><i class="fas fa-university"></i> Institution
         </a>
       </div>
 
-      <a href="html/dashboard.html" class="">
+      <a href="{% url "dashboard" %}" class="">
         <i class="fas fa-columns"></i> Dashboard
       </a>
-      <a href="../incidents.html" class="">
+      <a href="{% url "incidents" %}" class="">
         <i class="fas fa-exclamation-circle"></i> Incidents
       </a>
 
-      <a href="html/feedback.html">
+      <a href="{% url "feedback" %}">
         <i class="fas fa-comments"></i> Feedback 
       </a>
 
-      <a href="html/reports.html">
+      <a href="{% url "reports" %}">
         <i class="fas fa-chart-pie"></i> Reports/Stats
       </a>
 
-      <a href="html/results.html">
+      <a href="{% url "results" %}">
         <i class="fas fa-poll"></i> Results 
       </a>
 
@@ -89,21 +86,23 @@
       <h1>Institution Registration</h1>
     </div>
     <div class="mainContent">
-      <form action="" method="post" class="">
+        {% block content %}
+      <form action="" method="POST" class="">
+          {% csrf_token %}
         <div class="registrationForm">
           <br /><br />
           <div class="form-left">
-            <label for="fName">Institution Name</label>
+            <label for="name">Institution Name</label>
             <br />
-            <input type="text" name="fName" id="fName" />
+            <input type="text" name="name" id="name" />
             <br />
-            <label for="Email">Email</label>
+            <label for="email">Email</label>
             <br />
             <input type="email" name="email" id="email" />
             <br />
-            <label for="Number">Telephone Number</label>
+            <label for="number">Telephone Number</label>
             <br />
-            <input type="number" name="tNumber" id="tNumber" />
+            <input type="text" name="telephone" id="telephone" />
           </div>
           <div class="form-right">
             <label for="city">City</label>
@@ -114,13 +113,14 @@
             <br />
             <input type="text" name="street" id="street" />
             <br />
-            <label for="STaddress">Address</label>
+            <label for="address">Address</label>
             <br />
-            <input type="text" name="STaddress" id="STaddress" />
+            <input type="text" name="address" id="address" />
           </div>
         </div>
         <button type="submit" class="regButton">SAVE</button>
       </form>
+      {% endblock content %}
     </div>
 
     <script>

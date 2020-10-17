@@ -40,38 +40,33 @@
       <div id="links">
         <br/>
         <div class="dropdown">
-          <a href="registration/registration.html" class=""
+            <a href="{% url "register" %}" class=""
             ><i class="fas fa-cash-register"></i> Registration
             <i class="fas fa-caret-down" class="dArrow"></i>
           </a>
           <div class="dropdownContent">
-            <a href="registration/agents.html"
+              <a href="{% url "register-agents" %}" class=""
               ><i class="fas fa-user-secret"></i> Agents</a
             >
-            <a href="registration/institution.html" class=""
+            <a href="{% url "register-inst" %}" class=""
               ><i class="fas fa-university"></i> Institution</a
             >
-            <a href="registration/location.html" class=""
+            <a href="{% url "register-location" %}" class=""
               ><i class="fas fa-compass"></i> Location</a
             >
           </div>
         </div>
-        <a href="dashboard.html" class="">
+        <a href="{% url "dashboard" %}" class="">
           <i class="fas fa-columns"></i> Dashboard
         </a>
-  
-        <a href="incidents.html" class="">
+        <a href="{% url "incidents" %}" class="">
           <i class="fas fa-exclamation-circle"></i> Incidents
         </a>
-  
-        <a href="feedback.html" class=""><i class="fas fa-comments"></i> Feedback </a>
-        
-        <a href="reports.html" class="">
+        <a href="{% url "feedback" %}" class=""><i class="fas fa-comments"></i> Feedback </a>
+        <a href="{% url "reports" %}" class="">
           <i class="fas fa-chart-pie"></i> Reports/Stats
         </a>
-  
-        <a href="results.html" class="active"><i class="fas fa-poll"></i> Results </a>
-  
+        <a href="{% url "results" %}" class="active"><i class="fas fa-poll"></i> Results </a>
         <div class="sidebarBottom">
           <button id="call" class="btnCall">
             <a href="#" class="call">
@@ -82,9 +77,5 @@
         </div>
       </div>
     </div>
-  
-
-
-
 </body>
 </html>
