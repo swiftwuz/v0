@@ -44,6 +44,27 @@ table{
     color: #ffffff;
     width: 100px;
     text-decoration: none;
+    border: none;
+}
+
+.status2{
+    background-color: green;
+    height: 30px;
+    border-radius: 50px;
+    color: #ffffff;
+    width: 100px;
+    text-decoration: none;
+    border: none;
+}
+
+.status3{
+    background-color: red;
+    height: 30px;
+    border-radius: 50px;
+    color: #ffffff;
+    width: 100px;
+    text-decoration: none;
+    border: none;
 }
 
 tr{
