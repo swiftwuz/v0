@@ -115,23 +115,22 @@ button{
 
     .profileHolder{
         width: 800px;
-        height: 265px;
+        height: 600px;
         background: rgba(228, 227, 227, 0.575);
         border-radius: 20px;
         margin-left: 150px;
-        display: flex;
+        display: grid;
     }
 
     .profileTl{
         display: grid;
-        margin-left: 10px;
+        margin-right: 10px;
     } 
     
     .profileTr{
-        display: grid;
-        margin-left: 15px;
+        margin-left: 100px;
         height: 80px;
-        margin-top: 80px;
+        margin-top: 20px;
     }
 
     table{
@@ -165,7 +164,7 @@ button{
 
     .mainContent{
         padding-bottom: 80px;
-        margin-left: 15px;
+        margin-left: 300px;
         width: 379px;
     }
 
@@ -174,9 +173,11 @@ button{
     }
 
     .profileHolder{
-        width: 100%;
+        width: 500px;
         margin-left: 0px;
-        background-color: #ffffff;
+        background: rgba(228, 227, 227, 0.575);
+        align-self: center;
+        justify-self: center;
     }
 
     .profileTl{
@@ -197,3 +198,41 @@ button{
         margin-top: 20px;
     }
 }
+
+@media only screen and (max-width:800px){
+    .profileHolder{
+        width: 300px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background: #ffffff;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .profileText{
+        display: grid;
+    }
+
+    .mainContent{
+        margin-left: 15px;
+        height: 100%;
+    }
+
+    .profileTr{
+        margin-top: 60px;
+    }
+
+    body{
+        background-color: #09273F;
+        overflow: hidden;
+    }
+
+    .content{
+        background-color: #09273F;
+    }
+
+    *{
+        overflow: hidden;
+    }
+}
+  
