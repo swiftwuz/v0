@@ -1,19 +1,11 @@
 .sidebar{
     /* background-color: #c4c4c4; */
     background-color:  rgba(196, 196, 196, 0.33);;
-    z-index: -1;
+    z-index: 0;
 }
 
 .container{
     background-color: #09273F;
-}
-
-.userImage1{
-    height: 100px;
-    width: 100px;
-    border-radius: 360px;
-    justify-self: center;
-    margin-top: 120px;
 }
 
 .userImage2{
@@ -32,9 +24,10 @@
     height: 40%;
     overflow: hidden;
     font-size: 16px;
-    top: 90px;
+    top: 200px;
     display: grid;
     justify-content: center;
+    margin-top: 200px;
 }
 
 .sideText{
@@ -48,28 +41,39 @@ h3{
 
 .profileHolder{
     width: 1120px;
-    height: 265px;
+    height: 600px;
     background: rgba(228, 227, 227, 0.575);
     border-radius: 20px;
     margin-left: 150px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.profileText{
     display: flex;
+    width: 1120px;
+    justify-content: center;
 }
 
 .profileTl{
     display: grid;
-    margin-left: 100px;
+    /* margin-right: 150px; */
 } 
 
 .profileTr{
     display: grid;
     margin-left: 150px;
     height: 80px;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 .sidebar{
     color: #000000;
     display: grid;
+    align-content: center;
 }
 
 .sidebar a{
@@ -92,27 +96,6 @@ button{
     border: none;
 }
 
-.activeButt{
-    color: #09273F;
-    background-color: #ffffff;
-    border: 1px solid #09273F
-}
-
-table{
-    border-collapse: collapse;
-    background-color: #f3f3f3;
-    width: 1120px;
-}
-
-th, td{
-    border-bottom: 1px solid #cecece;
-    width: 200px;
-    padding: 8px;
-}
-
-tr{
-    margin: 20px;
-}
 
 .selections{
     justify-self: right;
