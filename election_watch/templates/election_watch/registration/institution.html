@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static "election_watch/home.css" %}" />
+    <link rel="stylesheet" href="{% static "election_watch/registration.css" %}" />
+    <script src="../../js/home.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2cf9464d02.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+          <a href="{% url "register" %}"></a> <img src="{% static "election_watch/images/logo.png" %}" alt="logo"></a>
+      </div>
+
+      <div  class="ewmid">
+          <h1>Election Watch Back Office</h1>
+      </div>
+
+      <div class="navbar">
+          <div class="icon-bar" onclick="Show()">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+          </div>
+
+          <ul id="nav-list">
+              <li class="close"><span onclick="Hide()">X</span></li>
+          </ul>
+      </div>
+  </div>
+
+    <div class="sidebar">
+      <br />
+      <div class="dropdown">
+        <a href="#" class="">
+          <i class="fas fa-cash-register"></i> Registration
+        </a>
+
+        <div class="dropdownContent">
+          <a href="agents.html"><i class="fas fa-user-secret"></i> Agents</a>
+          <a href="location.html"><i class="fas fa-compass"></i> Location</a>
+        </div>
+        <a href="institution.html" class="active"
+          ><i class="fas fa-university"></i> Institution
+        </a>
+      </div>
+
+      <a href="{% url "dashboard" %}" class="">
+        <i class="fas fa-columns"></i> Dashboard
+      </a>
+      <a href="{% url "incidents" %}" class="">
+        <i class="fas fa-exclamation-circle"></i> Incidents
+      </a>
+
+      <a href="{% url "feedback" %}">
+        <i class="fas fa-comments"></i> Feedback 
+      </a>
+
+      <a href="{% url "reports" %}">
+        <i class="fas fa-chart-pie"></i> Reports/Stats
+      </a>
+
+      <a href="{% url "results" %}">
+        <i class="fas fa-poll"></i> Results 
+      </a>
+
+      <div class="sidebarBottom">
+        <a href="#" class="call">
+          <i class="fas fa-phone-volume"></i> Make a Call</a
+        >
+        <a href="../../index.html">
+          <i class="fas fa-sign-out-alt"></i> Logout</a
+        >
+      </div>
+    </div>
+
+    <div class="content">
+      <h1>Institution Registration</h1>
+    </div>
+    <div class="mainContent">
+        {% block content %}
+      <form action="" method="POST" class="">
+          {% csrf_token %}
+        <div class="registrationForm">
+          <br /><br />
+          <div class="form-left">
+            <label for="name">Institution Name</label>
+            <br />
+            <input type="text" name="name" id="name" />
+            <br />
+            <label for="email">Email</label>
+            <br />
+            <input type="email" name="email" id="email" />
+            <br />
+            <label for="number">Telephone Number</label>
+            <br />
+            <input type="text" name="telephone" id="telephone" />
+          </div>
+          <div class="form-right">
+            <label for="city">City</label>
+            <br />
+            <input type="text" name="city" id="city" />
+            <br />
+            <label for="street">Street</label>
+            <br />
+            <input type="text" name="street" id="street" />
+            <br />
+            <label for="address">Address</label>
+            <br />
+            <input type="text" name="address" id="address" />
+          </div>
+        </div>
+        <button type="submit" class="regButton">SAVE</button>
+      </form>
+      {% endblock content %}
+    </div>
+
+    <script>
+      var navList = document.getElementById("nav-lists");
+      function Show() {
+        navList.classList.add("_Menus-show");
+      }
+
+      function Hide() {
+        navList.classList.remove("_Menus-show");
+      }
+
+      let result = document.querySelector("#result");
+      document.body.addEventListener("change", function (e) {
+        let target = e.target;
+        let message;
+        switch (target.id) {
+          case "National":
+            message = "National";
+            break;
+
+          case "Region":
+            message = "Region";
+            break;
+
+          case "Constituency":
+            message = "Constituency";
+            break;
+        }
+        result.textContent = message;
+      });
+    </script>
+  </body>
+</html>

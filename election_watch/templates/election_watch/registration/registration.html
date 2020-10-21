@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registered Polling Agents</title>
+    <link rel="stylesheet" href="{% static "election_watch/home.css" %}" />
+    <link rel="stylesheet" href="{% static "election_watch/registration.css" %}" />
+    <script src="../js/home.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2cf9464d02.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="logo">
+          <a href="#"> <img src="{static "election_watch/images/logo.png"}" alt="logo"></a>
+      </div>
+  
+      <div  class="ewmid">
+          <h1>Election Watch Back Office</h1>
+      </div>
+  
+      <div class="navbar">
+          <div class="icon-bar" onclick="Show()">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+          </div>
+  
+          <ul id="nav-list">
+              <li class="close"><span onclick="Hide()">X</span></li>
+              <li><img class="userPicture" src="{% static "election_watch/images/user.png" %}" alt="" /></li>
+              <li><a href="#"> Username</a></li>
+          </ul>            
+      </div>
+  </div>
+
+    <div class="sidebar">
+      <br />
+      <div class="dropdown">
+        <a href="registration.html" class="active"
+          ><i class="fas fa-cash-register"></i> Registration
+          <i class="fas fa-caret-down" class="dArrow"></i>
+        </a>
+        <div class="dropdownContent">
+          <a href="agents.html"
+            ><i class="fas fa-user-secret"></i> Agents</a
+          >
+          <a href=institution.html" class=""
+            ><i class="fas fa-university"></i> Institution</a
+          >
+          <a href="location.html" class=""
+            ><i class="fas fa-compass"></i> Location</a
+          >
+        </div>
+      </div>
+      <a href="../dashboard.html" class="">
+        <i class="fas fa-columns"></i> Dashboard
+      </a>
+
+      <a href="../incidents.html" class="">
+        <i class="fas fa-exclamation-circle"></i> Incidents
+      </a>
+
+      <a href="../feedback.html"><i class="fas fa-comments"></i> Feedback </a>
+      
+      <a href="reports.html" class="">
+        <i class="fas fa-chart-pie"></i> Reports/Stats
+      </a>
+
+      <a href="../results.html"><i class="fas fa-poll"></i> Results </a>
+
+      <div class="sidebarBottom">
+        <button id="call" class="btnCall">
+          <a href="#" class="call">
+            <i class="fas fa-phone-volume"></i> Make a Call
+          </a>
+        </button>
+
+        <a href="../../index.html"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+
+    
+    <div class="content">
+        <h1>Registered Polling Agents</h1>
+    </div>
+
+    <div class="mainContent">
+      <div class="incidenceTables">
+        <table>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Affiliation</th>
+            <th>Affiliation Code</th>
+            <th>Country</th>
+            <th>Role</th>
+          </tr>
+
+          <tr>
+            <td id="fName">John</td>
+            <td id="lName">Doe</td>
+            <td id="phoneNumber"> 045334490</td>
+            <td id="Email">jD@doe.com</td>
+            <td id="Affiliation">NDP</td>
+            <td id="AffCode"> 2152 </td>
+            <td id="Country"> Ghana</td>
+            <td id="Role"> Polling Agent</td>
+          </tr>
+
+          <tr>
+            <td id="fName">John</td>
+            <td id="lName">Doe</td>
+            <td id="phoneNumber"> 045334490</td>
+            <td id="Email">jD@doe.com</td>
+            <td id="Affiliation">NDP</td>
+            <td id="AffCode"> 2152 </td>
+            <td id="Country"> Ghana</td>
+            <td id="Role"> Polling Agent</td>
+          </tr>
+
+          <tr>
+            <td id="fName">John</td>
+            <td id="lName">Doe</td>
+            <td id="phoneNumber"> 045334490</td>
+            <td id="Email">jD@doe.com</td>
+            <td id="Affiliation">NDP</td>
+            <td id="AffCode"> 2152 </td>
+            <td id="Country"> Ghana</td>
+            <td id="Role"> Polling Agent</td>
+          </tr>
+
+          <tr>
+            <td id="fName">John</td>
+            <td id="lName">Doe</td>
+            <td id="phoneNumber"> 045334490</td>
+            <td id="Email">jD@doe.com</td>
+            <td id="Affiliation">NDP</td>
+            <td id="AffCode"> 2152 </td>
+            <td id="Country"> Ghana</td>
+            <td id="Role"> Polling Agent</td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="call-content">
+          <h1>Make a Call</h1>
+          <div class="search">
+            <input
+              type="text"
+              name="Search"
+              id="Search"
+              placeholder="Search Contact"
+              class="searchContent"
+            />
+          </div>
+          <div class="numbers">
+            <div class="letter">P</div>
+            <h2>Police Department</h2>
+            <h5>191</h5>
+          </div>
+          <br />
+          <div class="numbers">
+            <div class="letter">P</div>
+            <h2>Police Department</h2>
+            <h5>191</h5>
+          </div>
+          <br />
+          <div class="numbers">
+            <div class="letter">P</div>
+            <h2>Police Department</h2>
+            <h5>191</h5>
+          </div>
+
+          <div class="addContact" id="addContact">
+            <button id="addBTN" class="addBTN">
+              <a href="#" class="call">
+                <i class="fas fa-plus"></i> Add Contact
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var modal = document.getElementById("myModal");
+
+      var callBTN = document.getElementById("call");
+
+      var span = document.getElementsByClassName("close")[0];
+
+      var addModal = document.getElementById("addContact");
+
+      var addBTN = document.getElementById("addBTN");
+
+      callBTN.onclick = function () {
+        modal.style.display = "flex";
+        modal.style.alignContent = "center";
+        modal.style.justifyContent = "center";
+      };
+
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>
