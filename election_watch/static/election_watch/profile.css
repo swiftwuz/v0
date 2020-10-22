@@ -1,7 +1,7 @@
 .sidebar{
     /* background-color: #c4c4c4; */
     background-color:  rgba(196, 196, 196, 0.33);;
-    z-index: 0;
+    z-index: -1;
 }
 
 .container{
