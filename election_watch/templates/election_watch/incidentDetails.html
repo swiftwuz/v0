@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidents</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/incidents.css">
+    <link rel="stylesheet" href="../css/registration.css" />
+    <script src="js/home.js"></script>
+    <script src="https://kit.fontawesome.com/2cf9464d02.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+        <a href="#"> <img src="../images/logo.png" alt="logo"></a>
+    </div>
+
+    <div  class="ewmid">
+        <h1>Election Watch Back Office</h1>
+    </div>
+
+    <div class="navbar">
+        <div class="icon-bar" onclick="Show()">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+
+        <ul id="nav-list">
+            <li class="close"><span onclick="Hide()">X</span></li>
+            <li><img class="userPicture" src="../images/user.png" alt="" /></li>
+            <li><a href="#"> Username</a></li>
+        </ul>            
+    </div>
+</div>
+
+    <div class="sidebar">
+        <br/>
+        <div class="dropdown">
+          <a href="registration/registration.html" class=""
+            ><i class="fas fa-cash-register"></i> Registration
+            <i class="fas fa-caret-down" class="dArrow"></i>
+          </a>
+          <div class="dropdownContent">
+            <a href="registration/agents.html"
+              ><i class="fas fa-user-secret"></i> Agents</a
+            >
+            <a href="registration/institution.html" class=""
+              ><i class="fas fa-university"></i> Institution</a
+            >
+            <a href="registration/location.html" class=""
+              ><i class="fas fa-compass"></i> Location</a
+            >
+          </div>
+        </div>
+        <a href="dashboard.html" class="">
+          <i class="fas fa-columns"></i> Dashboard
+        </a>
+  
+        <a href="incidents.html" class="active">
+          <i class="fas fa-exclamation-circle"></i> Incidents
+        </a>
+  
+        <a href="feedback.html"><i class="fas fa-comments"></i> Feedback </a>
+        
+        <a href="reports.html" class="">
+          <i class="fas fa-chart-pie"></i> Reports/Stats
+        </a>
+  
+        <a href="results.html"><i class="fas fa-poll"></i> Results </a>
+  
+        <div class="sidebarBottom">
+          <button id="call" class="btnCall">
+            <a href="#" class="call">
+              <i class="fas fa-phone-volume"></i> Make a Call
+            </a>
+          </button>
+  
+          <a href="../index.html"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+  
+
+    <div class="content">
+        
+        <div class="top">
+            <a href="../html/incidents.html">
+                <h2 class="topText">
+                    <i class="fas fa-long-arrow-alt-left"></i>  Incidences - Violence
+                </h2>
+            </a>
+        </div>
+    </div>
+
+    <div class="mainContent">
+        <div class="incidenceForm">
+            <div class="form-left">
+                <div class="left-top">
+                    <div class="left">
+                        <h2>Subject: Violence</h2>
+                        <div class="right">
+                            09/09/2020  9:32AM
+                        </div>
+                    </div>
+                </div>
+
+                <div class="incidentImg">
+                    <div class="aB">
+                        <img src="" alt="" class="a">
+                        <div class="right">
+                            09/09/2020  9:32AM
+                        </div>
+                    </div>
+
+                    <div class="aB">
+                        <img src="" alt="" class="b">
+                        <div class="right">
+                            09/09/2020  9:32AM
+                        </div>
+                    </div>
+
+                    <div class="aB">
+                        <img src="" alt="" class="c">
+                        <div class="right">
+                            09/09/2020  9:32AM
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="audioRecordings">
+                    <h2> Audio Recordings </h2>
+                    <div class="audio">
+                        <i class="far fa-play-circle"></i> 
+                        <div class="audioDesc">
+                            Conflict Among Parties
+                            <br><br>
+                            00:01:41
+                            <br><br>
+                            <div class="time">
+                                09:23
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <h2>Description: </h2>
+                    <h5>Violent clashes between political party supporters 
+                    for Ghana result in de death of one person, while two 
+                    others dey inside critical condition</h5>
+                </div>
+
+            </div>
+            <div class="form-right">
+            <img src="../images/location.png" alt="" class="locationImg" />
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
