@@ -97,7 +97,9 @@
                 {% for evidence in incident %}
                 <tr>
                     <th id="incidencePicture" class="th2">
+                      <a href="">
                         <img class="incidencePicture" src="{{ evidence.image.url }}" alt="">
+                      </a>
                     </th>
                     <th id="pollingStation">Ashanti</th>
                     <th id="incidence Type">{{ evidence.category }}</th>

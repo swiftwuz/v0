@@ -369,6 +369,7 @@ a{
         width: 100%;
         padding-left: 10px;
         margin-top: 50px;
+        color: #ffffff;
     }
 
     .incidenceForm .form-right .locationImg{
@@ -454,3 +455,199 @@ a{
         margin-left: 0px;
     }
 }
+
+.container2 {
+    width: 100%;
+    background-color: #03588C;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    height: 100px;
+    z-index: 1;
+    justify-content: center;
+  }
+  
+  .container2 .logo {
+    max-width: 250px;
+    padding: 0 10px;
+    overflow: hidden;
+    padding-left: 40px;
+    position: fixed;
+    left: 35px;
+    justify-content: center;
+  }
+  
+  .container2 .logo a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /* height: 80px; */
+  }
+  
+  .container2 .logo a img {
+    max-width: 120px;
+    /* max-height: 80px; */
+  }
+  
+  .container2 .ewmid{
+    display: grid;
+    justify-self: center;
+    color: #ffffff;
+  }
+  
+  .container2 .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 10px;
+    float: right;
+    right: 0px;
+    position: fixed;
+  }
+  
+  .container2 .navbar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container2 .navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  
+  .container2 .navbar ul li a:hover {
+    color: #ffffff;
+    background-color: rgba(23, 23, 23, 0.9);
+  }
+  
+  .container2 .navbar ul .close {
+    display: none;
+    text-align: right;
+    padding: 10px;
+  }
+  
+  .container2 .navbar ul .close span {
+    font-size: 40px;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  
+  .container2 .navbar .icon-bar {
+    padding: 18px 8px;
+    width: 50px;
+    height: 60px;
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .container2 .navbar .icon-bar i {
+    background-color: #ffffff;
+    height: 2px;
+  }
+  
+  @media only screen and (max-width:800px) {
+    .container2 {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+  
+    .container2 .logo {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      left: 0px;
+      padding-left: 0px;
+    }
+  
+    .container2 .navbar {
+      -webkit-box-flex: 0;
+      -ms-flex: 0;
+      flex: 0;
+      float: right;
+    }
+  
+    .container2 .ewmid{
+      display: none;
+    }
+  
+    .container2 .navbar ul {
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      position: fixed;
+      left: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      background: #ffffff;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      -webkit-transition: left .3s;
+      -o-transition: left .3s;
+      transition: left .3s;
+      float: right;
+    }
+  
+    .container2 .navbar ul li a {
+      padding: 10px;
+      font-size: 16px;
+      height: auto;
+      line-height: normal;
+      color: #ffffff;
+    }
+  
+    .container2 .navbar ul .close {
+      display: block;
+    }
+  
+    .container2 .navbar .icon-bar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+  
+    .container2 .navbar ._Menus-show {
+      left: 0;
+    }
+  }
