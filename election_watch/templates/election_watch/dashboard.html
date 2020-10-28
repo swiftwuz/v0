@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="{% static "election_watch/home.css" %}">
     <script src="../js/home.js"></script>
     <script src="https://kit.fontawesome.com/2cf9464d02.js" crossorigin="anonymous">
     </script>
@@ -12,11 +13,11 @@
     <script src="../assets/js/omega.js"></script>
 
 </head>
-<body> 
+<body>
 
   <div class="container">
     <div class="logo">
-        <a href="#"> <img src="../images/logo.png" alt="logo"></a>
+        <a href="#"> <img src="{% static "election_watch/images/logo.png" %}" alt="logo"></a>
     </div>
 
     <div  class="ewmid">
@@ -26,9 +27,9 @@
     <div class="navbar">
         <ul id="nav-list">
             <li class="close"><span onclick="Hide()">X</span></li>
-            <li><img class="userPicture" src="../images/user.png" alt="" /></li>
-            <li><a href="profile.html"> Username</a></li>
-        </ul>            
+            <li><img class="userPicture" src="{% static "election_watch/images/user.png" %}" alt="" /></li>
+            <li><a href="#"> Username</a></li>
+        </ul>
     </div>
   </div>
 
@@ -36,44 +37,37 @@
       <div id="links">
         <br/>
         <div class="dropdown">
-
-          <a href="registration/registration.html" class="">
-            <i class="fas fa-cash-register"></i> 
-            Registration
-            <i class="fas fa-caret-down" class="dArrow"></i>
-          </a>
-
-          <div class="dropdownContent">
-
-            <a href="registration/agents.html">
-              <i class="fas fa-user-secret"></i> Agents</a>
-
-            <a href="registration/institution.html" class="">
-              <i class="fas fa-university"></i> Institution
+            <a href="{% url "register" %}" class="">
+                <i class="fas fa-cash-register"></i>Registration
+                <i class="fas fa-caret-down" class="dArrow"></i>
             </a>
 
-            <a href="registration/location.html" class="">
-              <i class="fas fa-compass"></i> Location
-            </a>
+            <div class="dropdownContent">
+                <a href="{% url "register-agents" %}">
+                    <i class="fas fa-user-secret"></i> Agents</a>
+
+                <a href="{% url "register-inst" %}" class="">
+                  <i class="fas fa-university"></i> Institution
+              </a>
+
+              <a href="{% url "register-location" %}" class="">
+                  <i class="fas fa-compass"></i> Location
+              </a>
 
           </div>
-          
         </div>
-        <a href="dashboard.html" class="active">
+        <a href="{% url "dashboard" %}" class="active">
           <i class="fas fa-columns"></i> Dashboard
         </a>
-  
-        <a href="incidents.html" class="">
+        <a href="{% url "incidents" %}" class="">
           <i class="fas fa-exclamation-circle"></i> Incidents
         </a>
-  
-        <a href="feedback.html"><i class="fas fa-comments"></i> Feedback </a>
-        
-        <a href="reports.html" class="">
+        <a href="{% url "feedback" %}"><i class="fas fa-comments"></i> Feedback </a>
+        <a href="{% url "reports" %}" class="">
           <i class="fas fa-chart-pie"></i> Reports/Stats
         </a>
   
-        <a href="results.html"><i class="fas fa-poll"></i> Results </a>
+        <a href="{% url "results" %}"><i class="fas fa-poll"></i> Results </a>
   
         <div class="sidebarBottom">
           <button id="call" class="btnCall">
@@ -84,7 +78,7 @@
           <a href="../../index.html"> <i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
       </div>
-    </div>  
+    </div>
 
     <div class="content">
         
@@ -180,6 +174,7 @@
 
 
 </script>
+
 
 </body>
 </html>
