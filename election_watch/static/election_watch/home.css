@@ -7,7 +7,6 @@
 
 *{
   font-family: 'Roboto', sans-serif;
-  /* overflow: hidden; */
 }
 
 body {
@@ -52,12 +51,10 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  /* height: 80px; */
 }
 
 .container .logo a img {
   max-width: 120px;
-  /* max-height: 80px; */
 }
 
 .container .ewmid{
@@ -218,18 +215,6 @@ body {
 }
 
 .sidebar{
-<<<<<<< HEAD
-    margin: 0;
-    padding: 0%;
-    width: 250px;
-    background-color: #03588C;
-    position: fixed;
-    height: 100%;
-    overflow: hidden;
-    font-size: 16px;
-    top: 90px;
-    z-index: -1;
-=======
   margin: 0;
   padding: 0%;
   width: 250px;
@@ -239,7 +224,6 @@ body {
   overflow: hidden;
   font-size: 16px;
   top: 90px;
->>>>>>> cbda875fcd1f020106b409e1efae45757e546f9b
 }
 
 .sidebar a{
@@ -740,4 +724,3 @@ tr{
   width: 50px;
   border-radius: 360px;
 }
-
