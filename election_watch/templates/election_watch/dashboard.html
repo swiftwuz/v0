@@ -109,47 +109,138 @@
       </div>
   </div>
 
-  <div class="mainContent">
+  <div class="mainContentD">
       <div class="map">
-          <img src="../images/ghana_Map.jpeg" alt="">
+        <!-- <div class="folium-map" id="map_138f4a67fa4b4b95b9629fa70e5bde3d" ></div> -->
+          {% include "election_watch/map.html" %}
       </div>
 
-      <div class="incidLoc">
+
+
+      <div class="results">
+          <div class="radios">
+              <input type="radio" name="status" id="National" class="r"> National
+              <input type="radio" name="status" id="Region" class="r"> Region
+              <input type="radio" name="status" id="Constituency" class="r"> Constituency
+          </div>
+
+          <input type="text" name="searchBar" id="searchBar" placeholder=" Search" class="searchBar">
+
+          
+          <div class="incidLoc">
+            <table>
+                <tr>
+                    <th>Incidence</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-check-square"></i></td>
+                    <td>Ashanti</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-check-square"></i></td>
+                    <td>Eastern</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-check-square"></i></td>
+                    <td>Western</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-exclamation-triangle"></i></td>
+                    <td>Greater Accra</td>
+                </tr>
+            </table>
+            <table>
+              <tr>
+                  <th>Incidence</th>
+                  <th>Location</th>
+              </tr>
+              <tr>
+                  <td><i class="fas fa-check-square"></i></td>
+                  <td>Ashanti</td>
+              </tr>
+              <tr>
+                  <td><i class="fas fa-check-square"></i></td>
+                  <td>Eastern</td>
+              </tr>
+              <tr>
+                  <td><i class="fas fa-check-square"></i></td>
+                  <td>Western</td>
+              </tr>
+              <tr>
+                  <td><i class="fas fa-exclamation-triangle"></i></td>
+                  <td>Greater Accra</td>
+              </tr>
+          </table>
+        </div>
+
+        <div class="incidLoc">
           <table>
               <tr>
                   <th>Incidence</th>
                   <th>Location</th>
               </tr>
               <tr>
-                  <th><i class="fas fa-check-square"></i></th>
-                  <th>Ashanti</th>
+                  <td><i class="fas fa-check-square"></i></td>
+                  <td>Ashanti</td>
               </tr>
               <tr>
-                  <th><i class="fas fa-check-square"></i></th>
-                  <th>Eastern</th>
+                  <td><i class="fas fa-check-square"></i></td>
+                  <td>Eastern</td>
               </tr>
               <tr>
-                  <th><i class="fas fa-check-square"></i></th>
-                  <th>Western</th>
+                  <td><i class="fas fa-check-square"></i></td>
+                  <td>Western</td>
               </tr>
               <tr>
-                  <th><i class="fas fa-exclamation-triangle"></i></th>
-                  <th>Greater Accra</th>
+                  <td><i class="fas fa-exclamation-triangle"></i></td>
+                  <td>Greater Accra</td>
               </tr>
           </table>
+          <table>
+            <tr>
+                <th>Incidence</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td><i class="fas fa-check-square"></i></td>
+                <td>Ashanti</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-check-square"></i></td>
+                <td>Eastern</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-check-square"></i></td>
+                <td>Western</td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-exclamation-triangle"></i></td>
+                <td>Greater Accra</td>
+            </tr>
+        </table>
       </div>
 
-      <div class="results">
-          <div class="radios">
-              <input type="radio" name="status" id="National"> National
-              <input type="radio" name="status" id="Region"> Region
-              <input type="radio" name="status" id="Constituency"> Constituency
-          </div>
-
-          <input type="text" name="searchBar" id="searchBar" placeholder=" Search" class="searchBar">
-
           <div class="resultsTable">
-              <div id="result"></div>
+              <div id="result" class="result">
+                <table>
+                  <tr>
+                    <th># of Registered Voters</th>
+                    <th>Votes Counted</th>
+                    <th>Percentage</th>
+                  </tr>
+                  <tr>
+                    <td>123,456</td>
+                    <td>12400</td>
+                    <td>9%</td>
+                  </tr>
+                  <tr>
+                    <td>123,456</td>
+                    <td>12400</td>
+                    <td>9%</td>
+                  </tr>
+                </table>
+              </div>
           </div>
           <div class="key">
               <i class="fas fa-check-square"></i>  : No Report Cases 

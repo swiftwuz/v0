@@ -14,6 +14,133 @@ body {
   padding: 0;
 }
 
+.container1 {
+  width: 100%;
+  background-color: #03588C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  height: 100px;
+  z-index: 1;
+  justify-content: center;
+}
+
+.container1 .logo {
+  max-width: 250px;
+  padding: 0 10px;
+  overflow: hidden;
+  padding-left: 40px;
+  position: fixed;
+  left: 35px;
+  justify-content: center;
+}
+
+.container1 .logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container1 .logo a img {
+  max-width: 120px;
+}
+
+.container1 .ewmid{
+  display: grid;
+  justify-self: center;
+  color: #ffffff;
+}
+
+.container1 .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 10px;
+  float: right;
+  right: 0px;
+  position: fixed;
+}
+
+.container1 .navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container1 .navbar ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.container1 .navbar ul li a:hover {
+  color: #ffffff;
+  background-color: rgba(23, 23, 23, 0.9);
+}
+
+.container1 .navbar ul .close {
+  display: none;
+  text-align: right;
+  padding: 10px;
+}
+
+.container1 .navbar ul .close span {
+  font-size: 40px;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.container1 .navbar .icon-bar {
+  padding: 18px 8px;
+  width: 50px;
+  height: 60px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.container1 .navbar .icon-bar i {
+  background-color: #ffffff;
+  height: 2px;
+}
+
+
 .container {
   width: 100%;
   background-color: #03588C;
@@ -437,45 +564,85 @@ h2{
   }
 }
 .mainContent{
-  margin-left: 200px;
+  margin-left: 50px;
   margin-top: 50px;
   padding: 1px 16px;
   display: flex;
   height: 600px;
-  z-index: 10;
   align-content: center;
   justify-content: center;
 }
 
+.mainContentD{
+  margin-left: 50px;
+  margin-top: 50px;
+  padding: 1px 16px;
+  display: flex;
+  height: 800px;
+  align-content: center;
+  justify-content: center;
+  /* overflow: hidden; */
+}
+
 .map{
   display: flex;
-  width: 500px;
-    
+  width: 800px;
+  height: 800px;
+  margin-bottom: 50px;
+  margin-left: 30px;
 }
 
 .incidLoc{
   display: flex;
-  width: 200px;
+  width: 600px;
   margin-left: 10px;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .results{
-  width: 400px;
   margin-left: 30px;
-  justify-content: space-between;
+}
+
+.result{
+  width: 100%;
+  justify-content: center;
+  display: grid;
+}
+
+.result table{
+  width: 600px;
+}
+
+.result tr th{
+  width: 200px;
+  height: 40px;
+}
+
+.result tr td{
+  width: 200px;
+  height: 40px;
 }
 
 .radios{
   justify-content: center;
   height: 20px;
   text-align: center;
+  display: flex;
+}
+
+.r{
+  width: 100px;
+  display: flex;
+  justify-content: center;
+
 }
 
 .searchBar{
   margin-top: 10px;
   border: 1.5px solid #919191;
   height: 40px;
-  width: 400px;
+  width: 600px;
   font-size: 20px;
   display: flex;
   align-content: center;
@@ -489,8 +656,10 @@ h2{
   background-color: #f5f4f4;
   height: 450px;
   margin-top: 30px;
-  width: 400px;
+  width: 600px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .key{
@@ -504,6 +673,33 @@ h2{
 
 tr{
   margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+th{
+  margin: 10px;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+td{
+  height: 50px;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+table{
+  border-collapse: collapse;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
 }
 
 .dropdown{
